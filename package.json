@@ -1,0 +1,19 @@
+{
+    "name": "dev",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --testPathPattern=\"test.js\"",
+        "format": "prettier --write '**/*.js'"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    },
+    "author": "stephen grider",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "29.7.0",
+        "prettier": "3.3.3"
+    }
+}

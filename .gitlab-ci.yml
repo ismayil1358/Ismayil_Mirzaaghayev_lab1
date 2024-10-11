@@ -1,0 +1,14 @@
+stages:
+  - test
+
+variables:
+  NODE_ENV: test
+
+test:
+  image: node:alpine
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event' && $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME != 'main'
+  script:
+    - npm i -g jest-cli
+    - jest $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME/test.js
+  allow_failure: false
